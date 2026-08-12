@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>From Procedure to Problem Solving — Forge</title>
+<meta name="description" content="PD 4 of four: students determine the problem, insufficient information, no steps, and irrelevant information.">
+<link rel="stylesheet" href="assets/site.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div class="inner">
+    <a class="brand" href="index.html"><span class="mark">F</span><span>Forge<em>worthwhile tasks</em></span></a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="pd1-intellectual-challenge.html">PD 1</a>
+      <a href="pd2-closed-to-open.html">PD 2</a>
+      <a href="pd3-tell-to-ask.html">PD 3</a>
+      <a href="pd4-procedure-to-problem-solving.html" aria-current="page">PD 4</a>
+      <a href="pd5-prompt-builder.html">PD 5</a>
+      <a href="prompt-builder.html">Builder</a>
+      <a href="programme.html">Programme</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="card"><h2 class="sr-only">From Procedure to Problem Solving — interactive four-module course, six hours, portfolio-assessed</h2>
+<style>
+.wt4-course{--nv:#1F3A63;--mg:#B5175F;--gd:#A67C00;--ink:#20242B;--mut:#6B7280;--ln:#DFE3E8;--bg:#FFFFFF;--tint:#F5F7FA;--warm:#FDF3F7;
+ font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;
+ max-width:100%;box-sizing:border-box;}
+.wt4-course *,.wt4-course *::before,.wt4-course *::after{box-sizing:border-box;}
+.wt4-course h1,.wt4-course h2,.wt4-course h3,.wt4-course h4{font-family:Georgia,"Times New Roman",serif;margin:0;}
+.wt4-hd{border-bottom:3px solid var(--gd);padding-bottom:1rem;margin-bottom:1.25rem;}
+.wt4-kick{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--mut);font-weight:700;}
+.wt4-course h1{font-size:2rem;color:var(--nv);margin:.35rem 0 .2rem;line-height:1.2;}
+.wt4-sub{color:var(--mg);font-style:italic;font-size:1.02rem;}
+.wt4-meta{font-size:.8rem;color:var(--mut);margin-top:.5rem;}
+.wt4-bar{height:5px;background:var(--ln);border-radius:99px;overflow:hidden;margin:.9rem 0 .5rem;}
+.wt4-bar>i{display:block;height:100%;background:var(--mg);width:0;transition:width .35s ease;}
+.wt4-dots{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.4rem;}
+.wt4-dot{flex:1 1 0;min-width:64px;border:1px solid var(--ln);background:var(--bg);border-radius:6px;padding:.45rem .3rem;
+ cursor:pointer;font:inherit;font-size:.7rem;color:var(--mut);text-align:center;transition:.15s;}
+.wt4-dot:hover{border-color:var(--mg);color:var(--mg);}
+.wt4-dot[aria-current="true"]{background:var(--nv);border-color:var(--nv);color:#fff;font-weight:700;}
+.wt4-dot.done::after{content:" \2713";color:#2E7D32;font-weight:700;}
+.wt4-panel{display:none;}
+.wt4-panel.on{display:block;}
+.wt4-panel>h2{font-size:1.45rem;color:var(--nv);margin-bottom:.35rem;}
+.wt4-out{font-size:.86rem;color:var(--mut);border-left:3px solid var(--gd);padding-left:.7rem;margin-bottom:1.1rem;}
+.wt4-course h3{font-size:1.05rem;color:var(--mg);margin:1.5rem 0 .5rem;}
+.wt4-course p{margin:0 0 .8rem;}
+.wt4-lead{font-weight:700;color:var(--nv);margin-bottom:.15rem!important;}
+.wt4-course ul,.wt4-course ol{margin:0 0 1rem;padding-left:1.2rem;}
+.wt4-course li{margin-bottom:.35rem;}
+.wt4-tw{overflow-x:auto;}
+.wt4-course table{border-collapse:collapse;width:100%;font-size:.86rem;margin:1rem 0;}
+.wt4-course th{background:var(--nv);color:#fff;text-align:left;padding:.5rem .65rem;font-size:.7rem;
+ letter-spacing:.06em;text-transform:uppercase;}
+.wt4-course td{border:1px solid var(--ln);padding:.5rem .65rem;vertical-align:top;}
+.wt4-course tbody tr:nth-child(even) td{background:var(--tint);}
+.wt4-note{background:var(--tint);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0;font-size:.92rem;}
+.wt4-note.warn{background:var(--warm);}
+.wt4-note b{color:var(--mg);}
+.wt4-ai{background:#F3F7F4;border-left:3px solid #2E7D32;border-radius:0 8px 8px 0;padding:.9rem 1.1rem;margin:1.1rem 0;font-size:.92rem;}
+.wt4-ai h4{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#2E7D32;margin-bottom:.45rem;}
+.wt4-ai code{display:block;background:#fff;border:1px solid #D6E4D8;border-radius:6px;padding:.65rem .8rem;
+ margin:.5rem 0;font-size:.83rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;line-height:1.5;}
+.wt4-act{border:1px dashed var(--gd);border-radius:8px;padding:1rem 1.15rem;margin:1.2rem 0;background:#FFFDF6;}
+.wt4-act h4{font-size:.95rem;color:var(--nv);margin-bottom:.5rem;}
+.wt4-q{border:1px solid var(--ln);border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;}
+.wt4-q>p{font-weight:600;margin-bottom:.6rem;}
+.wt4-opt{display:block;width:100%;text-align:left;border:1px solid var(--ln);background:var(--bg);border-radius:6px;
+ padding:.5rem .7rem;margin-bottom:.4rem;cursor:pointer;font:inherit;font-size:.9rem;transition:.15s;}
+.wt4-opt:hover{border-color:var(--mg);}
+.wt4-opt.ok{border-color:#2E7D32;background:#EFF7EF;}
+.wt4-opt.no{border-color:var(--mg);background:var(--warm);}
+.wt4-fb{font-size:.87rem;margin-top:.5rem;padding:.6rem .75rem;border-radius:6px;background:var(--tint);display:none;}
+.wt4-fb.on{display:block;}
+.wt4-course textarea{width:100%;font:inherit;font-size:.9rem;padding:.6rem .7rem;border:1px solid var(--ln);
+ border-radius:6px;resize:vertical;background:var(--bg);color:var(--ink);}
+.wt4-course textarea:focus{outline:2px solid var(--mg);outline-offset:1px;}
+.wt4-btn{border:1px solid var(--nv);background:var(--nv);color:#fff;border-radius:6px;padding:.5rem .95rem;
+ cursor:pointer;font:inherit;font-size:.86rem;font-weight:600;}
+.wt4-btn.ghost{background:transparent;color:var(--nv);}
+.wt4-btn:disabled{opacity:.35;cursor:not-allowed;}
+.wt4-btn.sm{padding:.35rem .7rem;font-size:.78rem;}
+.wt4-nav{display:flex;justify-content:space-between;gap:.6rem;margin-top:1.8rem;padding-top:1.1rem;border-top:1px solid var(--ln);}
+.wt4-tools{display:flex;gap:.5rem;flex-wrap:wrap;margin:.6rem 0 1.2rem;}
+.wt4-saved{font-size:.75rem;color:var(--mut);align-self:center;}
+.wt4-pf label{display:block;font-weight:700;color:var(--nv);margin:1.1rem 0 .2rem;font-size:.95rem;}
+.wt4-pf .hint{font-size:.82rem;color:var(--mut);margin-bottom:.4rem;}
+.wt4-src{font-size:.78rem;color:var(--mut);border-top:1px solid var(--ln);margin-top:1.6rem;padding-top:.7rem;}
+@media print{
+ .wt4-dots,.wt4-nav,.wt4-tools,.wt4-bar,.wt4-opt{display:none!important;}
+ .wt4-panel{display:block!important;page-break-after:always;}
+ .wt4-fb{display:block!important;}
+ .wt4-course{max-width:none;font-size:11pt;}
+ .wt4-course textarea{border:1px solid #999;min-height:70px;}
+}
+</style>
+<div class="wt4-course" id="wt4-root">
+<div class="wt4-hd"><div class="wt4-kick">FORGE · PROFESSIONAL DEVELOPMENT · CERTIFICATED</div><h1>From Procedure to Problem Solving</h1><div class="wt4-sub">Students work out what to do, rather than doing what they were told</div><div class="wt4-meta">Four modules · 6 hours · self-paced · portfolio-assessed</div></div>
+<div class="wt4-bar"><i></i></div>
+<div class="wt4-tools"><button class="wt4-btn ghost sm wt4-print" type="button">Print / PDF</button><button class="wt4-btn ghost sm wt4-export" type="button">Export portfolio</button><button class="wt4-btn ghost sm wt4-reset" type="button">Reset progress</button><span class="wt4-saved"></span></div>
+<div class="wt4-dots"><button class="wt4-dot" type="button" aria-current="false">Start</button><button class="wt4-dot" type="button" aria-current="false">Module 1</button><button class="wt4-dot" type="button" aria-current="false">Module 2</button><button class="wt4-dot" type="button" aria-current="false">Module 3</button><button class="wt4-dot" type="button" aria-current="false">Module 4</button><button class="wt4-dot" type="button" aria-current="false">Portfolio</button></div>
+<section class="wt4-panel"><h2>Before you start</h2><div class="wt4-out">PD 1, 2 and 3 first. This is the most demanding of the four and it assumes the other three.</div><p>Adding these techniques does not make teaching by procedure obsolete. A student who has never been shown a reliable method has nothing to fall back on, and effective teachers hold a range and know when each one belongs.</p>
+<p>What this course addresses is a specific imbalance. In most subjects we give students the problem, the information needed to solve it, and the steps — and then assess whether they can execute. Assessments, and the world, supply none of those three.</p>
+<h3>The four techniques</h3>
+<ol><li><b>Students determine the problem</b> — they identify what is worth solving before anything is solved</li>
+<li><b>Provide insufficient information</b> — they work out what they need and ask for it</li>
+<li><b>Don't give the steps</b> — they construct the method</li>
+<li><b>Include irrelevant information</b> — they decide what matters</li>
+</ol>
+<p>They can be used in sequence — which is roughly what a full problem-solving lesson looks like — or one at a time.</p><div class="wt4-note"><b>Bring the lesson you taught after PD 3</b> and be ready to summarise it in three minutes: which technique, what students did, what you would change.</div><div class="wt4-note warn"><b>Attribution.</b> Transforming Tasks and TfEL were developed and published by the <b>South Australian Department for Education</b>. The Three Act structure discussed in Module 1 is Dan Meyer's. Forge is not affiliated with or endorsed by either.</div></section>
+<section class="wt4-panel"><h2>Module 1 — Students determine the problem</h2><div class="wt4-out">90 minutes · Outcome: you can open a lesson with a provocation rather than a question.</div><h3>1.1&nbsp; Who formulates the problem</h3>
+<p>In a textbook, the problem arrives pre-formulated: here is the situation, here are the numbers, here is what to find. The student's job begins at the method. But formulating the problem is most of the intellectual work, and it is the part we routinely do for them.</p>
+<p>Dan Meyer's <em>Three Act</em> structure is the clearest available demonstration. Act 1 is a provocation with no question attached — a video of a tank slowly filling with water, played in silence. Within seconds a class is asking how long it will take. The question came from them, and they now want the answer.</p><div class="wt4-tw"><table><thead><tr><th>Act</th><th>What happens</th><th>Why</th></tr></thead><tbody><tr><td>Act 1 — the provocation</td><td>Something is shown. No question is asked. Students notice and wonder, then generate questions.</td><td>Intrigue, and the problem becomes theirs. This is the act most often skipped.</td></tr><tr><td>Act 2 — the resolution</td><td>Students identify what information they need and request it. Then they work out how to use it.</td><td>They select the information and construct the method — both normally done for them.</td></tr><tr><td>Act 3 — the reveal and the sequel</td><td>The actual answer is shown. Then: did our method work? Was it the best way? What if…?</td><td>Reflection, and the sequel opens the next inquiry.</td></tr></tbody></table></div><h3>1.2&nbsp; Sorting the questions students generate</h3>
+<p>A class generating questions produces a range, many of which are not the one you need. Sorting them into two groups — <em>questions we could answer with mathematics/science/evidence</em>, and <em>questions we could not</em> — keeps everyone's contribution in play while narrowing to the useful one.</p>
+<p>This matters more than it sounds. Discarding contributions teaches a class not to contribute; sorting them teaches a distinction that is itself worth learning.</p>
+<h3>1.3&nbsp; This is not abandonment</h3>
+<p>The teacher in a lesson like this is more active, not less. They are not standing back while students flounder. They are circulating, questioning, refusing to supply, and connecting one group's idea to another's.</p><div class="wt4-note warn"><b>The distinction that decides whether this works.</b> Not giving the steps is not the same as not helping. The help takes the form of questions — the Socratic set from PD 3 does the work here — rather than instructions. A teacher who has not done PD 3 will find this technique very hard, because the only tool left when you stop telling is asking well.</div><h3>1.4&nbsp; It is not only for maths</h3>
+<p>Neil Atkin adapted the Three Act structure for science after finding his students lacked initiative and perseverance, avoided word problems and wanted the formula. Three identical cartons — full, half full, empty — are pushed over simultaneously by a rod. The video stops before any of them falls. What happens next, and why?</p>
+<p>The structure transfers to any subject where something can be shown that provokes a question: a graph with the axis labels removed, two contemporary accounts that contradict each other, a photograph with no caption, a piece of writing that fails and does not say why.</p><div class="wt4-ai"><h4>Finding provocations</h4><p>Genuinely one of the highest-leverage uses in the programme. Finding a provocation is a divergent search problem and a model is fast at it.</p><code>I want students to end up understanding [the idea].
+Year group: [ ].
+
+Give me six provocations — things I could show for under a minute
+with no question attached — that would make a class of this age
+spontaneously ask a question that idea answers.
+
+For each: what I show, and the question I expect them to arrive at.
+Rule out anything that requires equipment beyond an ordinary
+classroom, and rule out anything where the question is written
+on the thing I am showing.</code><p>Then discard the first three. Models produce the obvious ones first, and the obvious provocation is usually a question in disguise.</p></div><div class="wt4-act"><h4>Activity — build Act 1</h4><ol><li>Take a topic you teach where you currently open by stating the problem.</li>
+<li>Design the provocation. Under a minute, no question attached.</li>
+<li>Predict five questions students will generate — including two that are off-target.</li>
+<li>Decide how you will sort them without discarding anyone's.</li>
+<li>Write the one sentence you will say after the provocation. For most, the correct answer is nothing.</li></ol></div><h3>Check your understanding</h3><div class="wt4-q" data-qid="wt4-m1-q0"><p>Why is Act 1 the act most often skipped?</p><button class="wt4-opt" type="button" data-i="0" data-ok="0" data-fb="It is usually the shortest — often under two minutes. Time is not why it goes.">It takes the most lesson time</button><button class="wt4-opt" type="button" data-i="1" data-ok="1" data-fb="Correct. Presenting the problem saves a few minutes and removes the intellectual work of deciding what is worth asking — which is the part assessments and life actually require.">Stating the problem ourselves feels efficient, and formulating it is the part we assume is not the learning</button><button class="wt4-opt" type="button" data-i="2" data-ok="0" data-fb="A photograph, an object or a demonstration all work. Meyer&#x27;s happen to be videos.">It requires video equipment</button><button class="wt4-opt" type="button" data-i="3" data-ok="0" data-fb="They find it engaging, which is the documented effect. What is uncomfortable is the teacher&#x27;s silence.">Students find it frustrating</button><div class="wt4-fb"></div></div><div class="wt4-q"><p>Design an Act 1 provocation for a topic in your subject. What do you show, and what question should it produce?</p><textarea rows="4" data-k="wt4-m1-q1" data-label="Design an Act 1 provocation for a topic in your subject. What do you s" placeholder="Your answer…"></textarea><p style="margin:.5rem 0 0"><button class="wt4-btn ghost sm wt4-reveal" type="button" data-t="wt4-m1-q1-a">Show a strong answer</button></p><div class="wt4-fb" id="wt4-m1-q1-a">A strong answer has three properties. It can be shown in under a minute. It contains no question — the whole point is that the question comes from the students. And it contains a gap the class can see: something incomplete, contradictory, surprising, or cut off before the outcome.<br><br>Examples that work: a graph with the axis labels removed; two eyewitness accounts of the same event that cannot both be true; a video that stops just before the thing falls; a piece of student writing that is technically correct and unconvincing. Examples that do not: anything with a caption, anything where you say 'so today we're going to look at…' beforehand, and anything where the interesting question requires knowledge the class does not yet have — a provocation nobody can wonder about is just a slide.</div></div></section>
+<section class="wt4-panel"><h2>Module 2 — Insufficient information, and no steps</h2><div class="wt4-out">90 minutes · Outcome: you can withhold information and method without abandoning the class.</div><h3>2.1&nbsp; Provide insufficient information</h3>
+<p>The standard task supplies exactly what is needed and nothing else. The student's task is to use it. Deciding <em>what is needed</em> — arguably the harder and more transferable skill — never arises.</p>
+<p>Withholding it inverts the lesson. Students have to work out what they would need to know, and ask for it. In Meyer's water tank, students request the dimensions, the flow rate, the units — and in requesting them they demonstrate whether they have a model of the problem at all.</p><div class="wt4-note"><b>What students ask for is your best diagnostic of the lesson.</b> A student who asks for the height of the tank has a model. A student who asks what formula to use does not. You will learn more in ninety seconds of requests than from a whole set of marked answers.</div><h3>2.2&nbsp; Don't give any of the steps at first</h3>
+<p>The most uncomfortable of the four, and the one with the clearest justification. In any external assessment, students are given a non-routine problem and no steps. If the only practice they have had is executing steps supplied by someone else, the assessment is testing something they have never practised.</p>
+<p>The national data behind this framework showed exactly that: the greatest available improvement was in non-routine, multi-step problem solving.</p>
+<h3>2.3&nbsp; The teacher is busier, not idler</h3><div class="wt4-tw"><table><thead><tr><th>Instead of</th><th>Do</th></tr></thead><tbody><tr><td>Giving the first step</td><td>'What is the first thing you could find out?'</td></tr><tr><td>Confirming a method</td><td>'What would tell you whether that is working?'</td></tr><tr><td>Rescuing a stuck group</td><td>Sending them to look at what another group has done, without comment</td></tr><tr><td>Telling them they are wrong</td><td>'Try it and see what happens' — a method that fails visibly teaches more than one prevented</td></tr><tr><td>Answering 'is this right?'</td><td>'What would convince you that it is?'</td></tr></tbody></table></div><h3>2.4&nbsp; How Might We</h3>
+<p>Borrowed from design thinking, and worth the thirty seconds it takes to explain to a class. Phrasing the challenge as <em>How might we…</em> does three things: <b>how</b> assumes a solution exists, which supplies the confidence to start; <b>might</b> concedes the attempt may fail and makes that acceptable; <b>we</b> makes it collective, so being stuck is not a personal condition.</p><div class="wt4-note warn"><b>Scaffolding without steps.</b> If a group genuinely cannot start, give them the <em>first</em> step only and nothing else, or a worked example of a similar problem with one error of reasoning in it. Both keep the construction of the method with the student. Giving all the steps ends the lesson.</div><div class="wt4-ai"><h4>Insufficient information is a natural fit</h4><p>This technique and AI resilience are the same design move seen from two angles. A task where the information is withheld until requested cannot be completed by pasting the question into a model — there is nothing sufficient to paste.</p><code>Rewrite this problem so students must request the information
+they need rather than being given it:
+[paste problem]
+
+Give me:
+ - what students see initially (as little as possible)
+ - the full list of information I hold back, with the answer
+   to each request
+ - which requests would tell me a student has a model of the
+   problem, and which would tell me they do not
+ - one request students commonly make that is irrelevant</code><p>That third bullet turns the technique into an assessment instrument, and it is the part teachers most often miss.</p></div><div class="wt4-act"><h4>Activity — strip a problem</h4><ol><li>Take a word problem or structured task you use. Note everything it supplies.</li>
+<li>Remove all of the numerical or factual information. What is left should still pose the question.</li>
+<li>List what you will supply on request, and what you will refuse.</li>
+<li>Remove the steps, if it had any. Write the three questions you will ask instead of giving them.</li>
+<li>Decide your rescue: the first-step-only version, or the flawed worked example.</li></ol></div><h3>Check your understanding</h3><div class="wt4-q" data-qid="wt4-m2-q0"><p>What is the strongest argument for not giving students the steps?</p><button class="wt4-opt" type="button" data-i="0" data-ok="0" data-fb="Often true and not the argument. Interest alone would not justify the difficulty.">It makes lessons more interesting</button><button class="wt4-opt" type="button" data-i="1" data-ok="1" data-fb="Correct. Practice at following supplied steps is practice at a task that never appears in the assessment. The gap in the data is precisely here.">In any external assessment they get a non-routine problem and no steps, so practising execution alone leaves them unpractised at the thing being tested</button><button class="wt4-opt" type="button" data-i="2" data-ok="0" data-fb="Many actively prefer to be told, especially at first. Preference is not the case.">Students prefer to work things out</button><button class="wt4-opt" type="button" data-i="3" data-ok="0" data-fb="It requires considerably more preparation, because you must anticipate the routes.">It saves the teacher preparation time</button><div class="wt4-fb"></div></div><div class="wt4-q" data-qid="wt4-m2-q1"><p>A student asks &#x27;what formula do I use?&#x27; during an insufficient-information task. What does this tell you?</p><button class="wt4-opt" type="button" data-i="0" data-ok="0" data-fb="Supplying it ends the lesson for that student and answers a question they should not yet be asking.">They need the formula</button><button class="wt4-opt" type="button" data-i="1" data-ok="1" data-fb="Correct, and it is genuinely useful diagnostic information. Compare with a student asking for the height of the tank, who plainly does have a model. The requests sort your class faster than marking will.">They do not yet have a model of the problem — they are searching for a procedure to apply</button><button class="wt4-opt" type="button" data-i="2" data-ok="0" data-fb="It may be, but this particular request is not the evidence. It is the standard first move of a student trained to execute.">The task is too hard</button><button class="wt4-opt" type="button" data-i="3" data-ok="0" data-fb="They were listening carefully, to several years of lessons in which the formula was the answer.">They were not listening</button><div class="wt4-fb"></div></div><div class="wt4-q"><p>A parent complains that you are not teaching methods and their child is confused. Write your reply.</p><textarea rows="5" data-k="wt4-m2-q2" data-label="A parent complains that you are not teaching methods and their child i" placeholder="Your answer…"></textarea><p style="margin:.5rem 0 0"><button class="wt4-btn ghost sm wt4-reveal" type="button" data-t="wt4-m2-q2-a">Show a strong answer</button></p><div class="wt4-fb" id="wt4-m2-q2-a">A strong reply concedes the observation, distinguishes it from the conclusion, and is specific about what happens next.<br><br>Something like: methods are absolutely being taught — what has changed is the order. Students now attempt the problem before the method is named, so that when it is named they understand what it is for and when it applies rather than only how to execute it. The confusion the parent has noticed is real, expected, and temporary; it is what working something out feels like from the inside, and it is the reason the method sticks afterwards. It should be distinguished from the confusion of a child who has no idea what is going on, and here is what I am watching for to tell the difference. If their child is still struggling in three weeks, that is a genuine problem and I want to know.<br><br>What a weak reply does is either defend the pedagogy in the abstract or capitulate and start supplying steps to that child, which quietly recreates the original problem for the student whose parent complained.</div></div></section>
+<section class="wt4-panel"><h2>Module 3 — Irrelevant information</h2><div class="wt4-out">90 minutes · Outcome: you can build tasks where deciding what matters is part of the work.</div><h3>3.1&nbsp; The subject asymmetry</h3>
+<p>English does this constantly. A student is given a long text, asked to locate what is relevant, and expected to disregard the rest. Nobody thinks this unfair — selecting is understood to be part of reading.</p>
+<p>In mathematics and science we usually do the opposite. Every number in the question is needed. Students learn, quite reasonably, that if a figure appears it must be used — and then meet an assessment, or a situation outside school, in which most of the available information is noise.</p>
+<h3>3.2&nbsp; The burglar and the estate agent</h3>
+<p>Two groups read the same description of a house. One reads it as a prospective burglar; the other as an estate agent. Both remember and prioritise entirely different details from an identical text.</p>
+<p>The point is not that people notice different things. It is that <b>relevance is not a property of information — it is a property of the question you are holding.</b> A student who cannot say what their question is cannot judge what is relevant, which is why this technique is so revealing.</p>
+<h3>3.3&nbsp; Doing it without being unfair</h3><div class="wt4-tw"><table><thead><tr><th>Do</th><th>Don't</th></tr></thead><tbody><tr><td>Include information that is plausible and genuinely unnecessary</td><td>Include information designed to mislead into a specific wrong answer</td></tr><tr><td>Ask students to state what they used and what they ignored</td><td>Mark them down for mentioning something irrelevant</td></tr><tr><td>Make the irrelevant material realistic — the kind of detail a real context contains</td><td>Add absurd details that signal their own irrelevance</td></tr><tr><td>Discuss disagreements about relevance — they are the best part</td><td>Treat relevance as having one right answer when it usually depends on the question</td></tr></tbody></table></div><div class="wt4-note"><b>Ask for the discard list.</b> 'What did you ignore, and why?' is worth more than the answer. It makes the selection visible, it makes it discussable, and it is very hard to produce without having reasoned.</div><h3>3.4&nbsp; Where this meets AI resilience</h3>
+<p>A task containing irrelevant information is markedly harder for a model to complete usefully, because a model has no question of its own and therefore no basis for discarding. Paste in a rich, noisy context and ask for the answer, and a model will typically use everything — which is visible, and wrong.</p>
+<p>This makes the technique doubly useful: it teaches selection, and it produces work whose provenance you can see.</p><div class="wt4-ai"><h4>Generating the noise</h4><p>Adding realistic irrelevant detail is tedious for a teacher and instant for a model. This is a straightforward win.</p><code>Here is a problem: [paste].
+
+Rewrite it as a realistic scenario of about 150 words that
+contains everything needed plus four pieces of plausible but
+unnecessary information.
+
+The unnecessary information must:
+ - be the kind of detail the real situation would contain
+ - not point toward a specific wrong answer
+ - not be obviously decorative
+
+Then list, separately, what is needed and what is not — and
+note any item where relevance genuinely depends on how the
+student frames the question.</code><p>That last note is the interesting output. Items whose relevance is arguable produce the best classroom discussion, and you want to know in advance which they are.</p></div><div class="wt4-act"><h4>Activity — add the noise</h4><ol><li>Take a clean problem from your subject. Everything given is needed.</li>
+<li>Rewrite it as a realistic scenario with four unnecessary details, using the brief above.</li>
+<li>Check each against the 'don't' column. Remove anything that misleads rather than distracts.</li>
+<li>Write the question you will ask afterwards: 'what did you ignore, and why?'</li>
+<li>Predict which detail will cause the most disagreement. That one is the lesson.</li></ol></div><h3>Check your understanding</h3><div class="wt4-q" data-qid="wt4-m3-q0"><p>What does the burglar and estate agent activity demonstrate?</p><button class="wt4-opt" type="button" data-i="0" data-ok="0" data-fb="Both groups read the same text with comparable ability. That is what makes the result interesting.">People have different reading abilities</button><button class="wt4-opt" type="button" data-i="1" data-ok="1" data-fb="Correct — and it follows that a student who cannot state their question cannot judge relevance. This is why the technique reveals so much.">Relevance depends on the question you are holding, not on the information itself</button><button class="wt4-opt" type="button" data-i="2" data-ok="0" data-fb="Motivation was not the variable. The purpose for reading was.">Students remember more when motivated</button><button class="wt4-opt" type="button" data-i="3" data-ok="0" data-fb="The opposite conclusion. Real contexts are full of it, and selecting is a skill that has to be practised somewhere.">Irrelevant information should be avoided</button><div class="wt4-fb"></div></div><div class="wt4-q"><p>Why is &#x27;what did you ignore, and why?&#x27; often more informative than the answer?</p><textarea rows="4" data-k="wt4-m3-q1" data-label="Why is &#x27;what did you ignore, and why?&#x27; often more informative than the" placeholder="Your answer…"></textarea><p style="margin:.5rem 0 0"><button class="wt4-btn ghost sm wt4-reveal" type="button" data-t="wt4-m3-q1-a">Show a strong answer</button></p><div class="wt4-fb" id="wt4-m3-q1-a">Because the answer shows the endpoint and the discard list shows the reasoning that got there. Two students can produce identical correct answers, one having reasoned about which information served the question and the other having used everything and been lucky that it worked out — and the answer alone cannot distinguish them.<br><br>It is also the harder thing to fake. A right answer can be arrived at by imitation, by guessing, or by a model. An account of what was set aside and why requires the student to have held a question in mind while reading, which is precisely the capability the technique is building. And when students disagree about what was discardable, you have the best available discussion about what the question actually was.</div></div></section>
+<section class="wt4-panel"><h2>Module 4 — Act 3: reflection and metacognition</h2><div class="wt4-out">90 minutes · Outcome: you protect the reflection, which is the step that always gets cut.</div><h3>4.1&nbsp; The step that runs out of time</h3>
+<p>Reflection is the first casualty of a lesson that overruns, and it is not specified as a technique in the strategy — which is exactly why it disappears. But a problem solved and not reflected on has taught the solution rather than the method.</p>
+<p>Meyer calls this Act 3: the reveal, and then the sequel. The answer is shown. Then two questions:</p>
+<ul><li><b>Did the strategy work?</b> Was it the best way to get there? What would you do differently?</li>
+<li><b>What now?</b> Would the answer change if…? What would happen if we…?</li></ul>
+<p>The second is why it is called the sequel. A good reflection generates the next problem, and the inquiry loops rather than stopping.</p>
+<h3>4.2&nbsp; Metacognition earns its place</h3>
+<p>Reflecting on your own thinking is not a soft add-on. The evidence on metacognitive strategies is among the strongest in education — the widely cited estimate is around eight months' additional progress, with the largest effects for lower-attaining and older students. Dewey's line remains the shortest statement of the case: we do not learn from experience, we learn from reflecting on experience.</p>
+<h3>4.3&nbsp; Making it happen</h3><div class="wt4-tw"><table><thead><tr><th>Instead of</th><th>Try</th><th>Time</th></tr></thead><tbody><tr><td>'What did we learn today?'</td><td>'What did you try that didn't work, and what did you do next?'</td><td>2 min</td></tr><tr><td>Marking the answer</td><td>Plus / Minus / Interesting on the method, not the answer</td><td>3 min</td></tr><tr><td>Moving to the next topic</td><td>'Would this method still work if…?' — the sequel</td><td>5 min</td></tr><tr><td>A written plenary</td><td>Two students explain their method; class votes on which generalises better</td><td>5 min</td></tr><tr><td>Nothing, because time ran out</td><td>Protect five minutes by cutting the fifth practice question</td><td>5 min</td></tr></tbody></table></div><div class="wt4-note warn"><b>The last row is the real intervention.</b> Reflection does not get skipped because teachers undervalue it. It gets skipped because it sits at the end, and everything at the end is optional. Move it, or protect it by cutting something earlier — decided in advance, not in the moment.</div><h3>4.4&nbsp; Transfer is the test</h3>
+<p>The strongest evidence that something has been understood is that it moves. A student who can apply the principle in a context they have not been taught has it; a student who can apply it only in the taught context may have the procedure.</p>
+<p>Build the transfer item into the reflection rather than saving it for the test: <em>where else would this work? · here is the same idea in a different subject — is it the same idea? · what is this a special case of?</em></p>
+<h3>4.5&nbsp; Different doorways, same room</h3>
+<p>Colleagues will notice these techniques overlap with things they already use — inquiry models, design thinking, structured problem-solving frameworks, research projects. They do. It is more useful to treat them as different doorways into the same room than to argue about which framework owns the idea. What matters is whether students are doing the thinking.</p><div class="wt4-ai"><h4>Reflection prompts, and one warning</h4><p>A model will generate reflection prompts endlessly. The risk is that reflection becomes another worksheet, which defeats it.</p><code>Give me five reflection questions for a lesson where students
+[what they did].
+
+Each must be answerable in one or two sentences, must be about
+the method rather than the answer, and must be one a student
+could not answer without having actually done the work.
+One of the five should ask where else the method would apply.</code><p>The warning: do not put student reflections into a model to summarise them. They are the most personal thing a student writes, they frequently name a peer or a difficulty, and the aggregate insight is not worth the exposure. Read them yourself; there are only thirty.</p></div><div class="wt4-act"><h4>Activity — protect the reflection</h4><ol><li>Take the lesson you have been building across this course.</li>
+<li>Write the Act 3 questions — one on the method, one sequel.</li>
+<li>Decide what you will cut to make room. Name it now.</li>
+<li>Write the transfer question: where else would this work?</li>
+<li>Decide how students record it. Two sentences is plenty; a worksheet is too much.</li></ol></div><h3>Check your understanding</h3><div class="wt4-q" data-qid="wt4-m4-q0"><p>Why does reflection get skipped even by teachers who value it?</p><button class="wt4-opt" type="button" data-i="0" data-ok="0" data-fb="Usually they do. The questions are not the obstacle.">They do not know what questions to ask</button><button class="wt4-opt" type="button" data-i="1" data-ok="1" data-fb="Correct — which is why the remedy is structural. Move it, or decide in advance what gets cut to protect it. Intending to do it is reliably not enough.">It sits at the end of the lesson, and everything at the end is optional in practice</button><button class="wt4-opt" type="button" data-i="2" data-ok="0" data-fb="They often do at first, which is a reason to make it short and concrete rather than to drop it.">Students dislike it</button><button class="wt4-opt" type="button" data-i="3" data-ok="0" data-fb="Neither are many things that survive. The mechanism is position in the lesson, not accountability.">It is not assessed</button><div class="wt4-fb"></div></div><div class="wt4-q" data-qid="wt4-m4-q1"><p>What is the strongest evidence that a student has understood a method rather than memorised it?</p><button class="wt4-opt" type="button" data-i="0" data-ok="0" data-fb="Fluent execution is compatible with no understanding at all — that is the whole problem this programme addresses.">They can execute it accurately and quickly</button><button class="wt4-opt" type="button" data-i="1" data-ok="1" data-fb="Correct. Transfer plus justification is the test. The &#x27;why&#x27; matters: applying it correctly by pattern-match alone is still a good sign but weaker evidence.">They apply it in a context they were not taught, and can say why it applies</button><button class="wt4-opt" type="button" data-i="2" data-ok="0" data-fb="Explaining the steps is often recall of your explanation. Ask them to explain it to someone who believes something different and you will see.">They can explain the steps back to you</button><button class="wt4-opt" type="button" data-i="3" data-ok="0" data-fb="The weakest evidence available, and the one most lessons rely on.">They get the right answer</button><div class="wt4-fb"></div></div><div class="wt4-q"><p>You have five minutes left and have not reflected. What do you cut next time, and why that?</p><textarea rows="4" data-k="wt4-m4-q2" data-label="You have five minutes left and have not reflected. What do you cut nex" placeholder="Your answer…"></textarea><p style="margin:.5rem 0 0"><button class="wt4-btn ghost sm wt4-reveal" type="button" data-t="wt4-m4-q2-a">Show a strong answer</button></p><div class="wt4-fb" id="wt4-m4-q2-a">The honest answer names something specific and slightly painful. Usually it is the last two practice questions — because they are the lowest-value minutes in the lesson for the students who have already understood, and the students who have not are not going to be rescued by two more attempts at the same thing. Sometimes it is the settling and admin at the start, which is more recoverable than it looks.<br><br>What matters is that the decision is made before the lesson rather than at minute fifty-five. In the moment, reflection always loses, because the practice questions are already printed and the reflection is not yet visible. A weak answer here is 'I'll manage the time better' — which is what everybody intends and nobody achieves, and it is the reason this step is missing from most lessons rather than present in most.</div></div></section>
+<section class="wt4-panel"><h2>Assessment portfolio</h2><div class="wt4-out">Three pieces. Portfolio-assessed, no examination, no observation.</div><p>Everything saves in this browser. Use <b>Export portfolio</b> when finished. This is the final course — completing all four portfolios earns the full programme certificate.</p><div class="wt4-tw"><table><thead><tr><th>Judgement</th><th>Part A</th><th>Part B</th><th>Overall</th></tr></thead><tbody><tr><td>Not yet</td><td>Steps or information withheld without support, or the provocation contains the question</td><td>Reports that it went well without evidence of student thinking</td><td>Resubmit with feedback</td></tr><tr><td>Pass</td><td>At least two techniques applied; the teacher's questions are recorded</td><td>What students requested or discarded, and what that revealed</td><td>Certificate issued</td></tr><tr><td>Distinction</td><td>Act 3 protected, with the cut named; a transfer question that genuinely transfers</td><td>Names a moment they were about to tell and did not, and what happened</td><td>Certificate with distinction</td></tr></tbody></table></div><div class="wt4-pf">
+<label>Part A — The lesson  (40%)</label>
+<div class="hint">Which techniques, and how. The provocation and the questions students generated. What information you withheld and what they requested. The questions you asked instead of giving steps. Your Act 3, and what you cut to protect it.</div>
+<textarea rows="12" data-k="wt4-pf-a" data-label="Part A — The lesson (40%)"></textarea>
+<label>Part B — What students did  (40%)</label>
+<div class="hint">What they asked for, and what that told you about who had a model of the problem. What they discarded. One moment you were about to supply something and did not. What failed. No student names.</div>
+<textarea rows="10" data-k="wt4-pf-b" data-label="Part B — What students did (40%)"></textarea>
+<label>Part C — Across all four courses  (20%)</label>
+<div class="hint">Under 400 words. Which of the sixteen techniques you will actually keep, and why those. What you have stopped doing. What you will bring to the 30-day follow-up clinic — including one thing that did not work.</div>
+<textarea rows="8" data-k="wt4-pf-c" data-label="Part C — Across all four courses (20%)"></textarea>
+</div><div class="wt4-note"><b>The 30-day clinic.</b> Ninety minutes, live, thirty days after this course. Bring one task you have actually taught and the evidence it produced. We look at what happened, not at what was planned. It is included in the programme fee and it is the part that decides whether any of this survives a full timetable.</div><div class="wt4-src"><b>Sources.</b> <b>Transforming Tasks</b>, South Australian Department for Education, within the TfEL framework. Three Act structure: Dan Meyer. Three Act Science: Neil Atkin. How Might We: design thinking. Reflection: John Dewey. Metacognition effect estimates: Education Endowment Foundation. Forge is not affiliated with or endorsed by any of these.</div></section>
+<div class="wt4-nav"><button class="wt4-btn ghost wt4-prev" type="button">← Back</button><button class="wt4-btn wt4-next" type="button">Next →</button></div>
+</div>
+<script>
+(function(){
+ var P="wt4", KEY="wt4-course-v1";
+ var root=document.getElementById(P+"-root"); if(!root) return;
+ var panels=root.querySelectorAll("."+P+"-panel");
+ var dots=root.querySelectorAll("."+P+"-dot");
+ var bar=root.querySelector("."+P+"-bar>i");
+ var prev=root.querySelector("."+P+"-prev"), next=root.querySelector("."+P+"-next");
+ var savedMsg=root.querySelector("."+P+"-saved");
+ var state={i:0,seen:{},ans:{},pf:{}};
+ try{var raw=localStorage.getItem(KEY); if(raw){state=Object.assign(state,JSON.parse(raw));}}catch(e){}
+ function save(){ try{localStorage.setItem(KEY,JSON.stringify(state));
+   if(savedMsg){savedMsg.textContent="Saved "+new Date().toLocaleTimeString();}}catch(e){} }
+ function show(i){
+  if(i<0||i>=panels.length) return;
+  state.i=i; state.seen[i]=true;
+  for(var k=0;k<panels.length;k++){ panels[k].classList.toggle("on",k===i); }
+  for(var d=0;d<dots.length;d++){
+    dots[d].setAttribute("aria-current", d===i?"true":"false");
+    dots[d].classList.toggle("done", !!state.seen[d]);
+  }
+  var n=0; for(var s in state.seen){ if(state.seen[s]) n++; }
+  if(bar) bar.style.width=Math.round(n/panels.length*100)+"%";
+  if(prev) prev.disabled=(i===0);
+  if(next) next.textContent = (i===panels.length-1)?"Finish":"Next \u2192";
+  save();
+  var top=root.getBoundingClientRect().top+window.pageYOffset-12;
+  if(window.pageYOffset>top) window.scrollTo({top:top,behavior:"smooth"});
+ }
+ for(var d=0;d<dots.length;d++){ (function(k){ dots[k].onclick=function(){show(k);}; })(d); }
+ if(prev) prev.onclick=function(){show(state.i-1);};
+ if(next) next.onclick=function(){ if(state.i<panels.length-1) show(state.i+1); };
+ root.querySelectorAll("."+P+"-q[data-qid]").forEach(function(q){
+   var qid=q.getAttribute("data-qid");
+   var fb=q.querySelector("."+P+"-fb");
+   q.querySelectorAll("."+P+"-opt").forEach(function(btn){
+     btn.onclick=function(){
+       var correct=btn.getAttribute("data-ok")==="1";
+       q.querySelectorAll("."+P+"-opt").forEach(function(b){b.classList.remove("ok","no");});
+       btn.classList.add(correct?"ok":"no");
+       if(fb){ fb.innerHTML=btn.getAttribute("data-fb"); fb.classList.add("on"); }
+       state.ans[qid]=btn.getAttribute("data-i"); save();
+     };
+     if(state.ans[qid]===btn.getAttribute("data-i")) btn.click();
+   });
+ });
+ root.querySelectorAll("."+P+"-reveal").forEach(function(b){
+   b.onclick=function(){ var t=document.getElementById(b.getAttribute("data-t"));
+     if(t){ t.classList.toggle("on"); b.textContent = t.classList.contains("on")?"Hide the strong answer":"Show a strong answer"; } };
+ });
+ root.querySelectorAll("textarea[data-k]").forEach(function(ta){
+   var k=ta.getAttribute("data-k");
+   if(state.pf[k]) ta.value=state.pf[k];
+   var t; ta.addEventListener("input",function(){ clearTimeout(t);
+     t=setTimeout(function(){ state.pf[k]=ta.value; save(); },400); });
+ });
+ var ex=root.querySelector("."+P+"-export");
+ if(ex) ex.onclick=function(){
+   var out="From Procedure to Problem Solving\nPortfolio \u2014 exported "+new Date().toLocaleString()+"\n\n";
+   root.querySelectorAll("textarea[data-k]").forEach(function(ta){
+     out += (ta.getAttribute("data-label")||ta.getAttribute("data-k")) + "\n" +
+            (ta.value.trim()||"[not yet written]") + "\n\n";
+   });
+   var a=document.createElement("a");
+   a.href=URL.createObjectURL(new Blob([out],{type:"text/plain;charset=utf-8"}));
+   a.download="pd4-procedure-to-problem-solving-portfolio.txt"; a.click(); URL.revokeObjectURL(a.href);
+ };
+ var pr=root.querySelector("."+P+"-print"); if(pr) pr.onclick=function(){window.print();};
+ var rs=root.querySelector("."+P+"-reset");
+ if(rs) rs.onclick=function(){ if(confirm("Clear your saved progress and all written answers for this course?")){
+     try{localStorage.removeItem(KEY);}catch(e){} location.reload(); } };
+ show(state.i||0);
+})();
+</script>
+</div>
+</main>
+<footer class="site"><div class="inner">
+<p><b>Forge — Designing Worthwhile Tasks with AI.</b> Four professional development courses, portfolio-assessed, with a 30-day follow-up clinic.</p>
+<p class="fine">Built on the <b>Transforming Tasks</b> strategies and the Teaching for Effective Learning (TfEL) framework, developed and published by the South Australian Department for Education. Forge is not affiliated with, endorsed by, or acting for the Department. See <a href="index.html#attribution" style="color:#A9BAD4">attribution and source</a>.</p>
+<p class="fine">Everything you type stays in your own browser. No account, no server, nothing uploaded.</p>
+</div></footer>
+</body></html>

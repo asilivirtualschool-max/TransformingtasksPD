@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Prompt Builder — Forge</title>
+<meta name="description" content="PD 5 of five: the four-stage prompting architecture for teachers, with a builder that assembles the prompt as you go.">
+<link rel="stylesheet" href="assets/site.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="inner">
+    <a class="brand" href="index.html"><span class="mark">F</span><span>Forge<em>worthwhile tasks</em></span></a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="pd1-intellectual-challenge.html">PD 1</a>
+      <a href="pd2-closed-to-open.html">PD 2</a>
+      <a href="pd3-tell-to-ask.html">PD 3</a>
+      <a href="pd4-procedure-to-problem-solving.html">PD 4</a>
+      <a href="pd5-prompt-builder.html" aria-current="page">PD 5</a>
+      <a href="prompt-builder.html">Builder</a>
+      <a href="programme.html">Programme</a>
+    </nav>
+</div></header>
+<main id="main">
+<div class="card"><h2 class="sr-only">The Prompt Builder — interactive four-module course, six hours, portfolio-assessed</h2>
+<style>
+.wt5-course{--nv:#1F3A63;--mg:#B5175F;--gd:#A67C00;--ink:#20242B;--mut:#6B7280;--ln:#DFE3E8;--bg:#FFFFFF;--tint:#F5F7FA;--warm:#FDF3F7;
+ font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;max-width:100%;box-sizing:border-box;}
+.wt5-course *,.wt5-course *::before,.wt5-course *::after{box-sizing:border-box;}
+.wt5-course h1,.wt5-course h2,.wt5-course h3,.wt5-course h4{font-family:Georgia,"Times New Roman",serif;margin:0;}
+.wt5-hd{border-bottom:3px solid var(--gd);padding-bottom:1rem;margin-bottom:1.25rem;}
+.wt5-kick{font-size:.68rem;letter-spacing:.19em;text-transform:uppercase;color:var(--mut);font-weight:700;}
+.wt5-course h1{font-size:2rem;color:var(--nv);margin:.35rem 0 .2rem;line-height:1.2;}
+.wt5-sub{color:var(--mg);font-style:italic;font-size:1.02rem;}
+.wt5-meta{font-size:.8rem;color:var(--mut);margin-top:.5rem;}
+.wt5-bar{height:5px;background:var(--ln);border-radius:99px;overflow:hidden;margin:.9rem 0 .5rem;}
+.wt5-bar>i{display:block;height:100%;background:var(--mg);width:0;transition:width .35s ease;}
+.wt5-dots{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.4rem;}
+.wt5-dot{flex:1 1 0;min-width:64px;border:1px solid var(--ln);background:var(--bg);border-radius:6px;padding:.45rem .3rem;cursor:pointer;font:inherit;font-size:.7rem;color:var(--mut);text-align:center;transition:.15s;}
+.wt5-dot:hover{border-color:var(--mg);color:var(--mg);}
+.wt5-dot[aria-current="true"]{background:var(--nv);border-color:var(--nv);color:#fff;font-weight:700;}
+.wt5-dot.done::after{content:" \2713";color:#2E7D32;font-weight:700;}
+.wt5-panel{display:none;} .wt5-panel.on{display:block;}
+.wt5-panel>h2{font-size:1.45rem;color:var(--nv);margin-bottom:.35rem;}
+.wt5-out{font-size:.86rem;color:var(--mut);border-left:3px solid var(--gd);padding-left:.7rem;margin-bottom:1.1rem;}
+.wt5-course h3{font-size:1.05rem;color:var(--mg);margin:1.5rem 0 .5rem;}
+.wt5-course p{margin:0 0 .8rem;}
+.wt5-lead{font-weight:700;color:var(--nv);margin-bottom:.15rem!important;}
+.wt5-course ul,.wt5-course ol{margin:0 0 1rem;padding-left:1.2rem;}
+.wt5-course li{margin-bottom:.35rem;}
+.wt5-course a{color:var(--nv);}
+.wt5-course code{background:var(--tint);padding:.1rem .3rem;border-radius:4px;font-size:.86em;}
+.wt5-tw{overflow-x:auto;}
+.wt5-course table{border-collapse:collapse;width:100%;font-size:.86rem;margin:1rem 0;}
+.wt5-course th{background:var(--nv);color:#fff;text-align:left;padding:.5rem .65rem;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;}
+.wt5-course td{border:1px solid var(--ln);padding:.5rem .65rem;vertical-align:top;}
+.wt5-course tbody tr:nth-child(even) td{background:var(--tint);}
+.wt5-note{background:var(--tint);border-radius:8px;padding:.9rem 1.1rem;margin:1rem 0;font-size:.92rem;}
+.wt5-note.warn{background:var(--warm);} .wt5-note b{color:var(--mg);}
+.wt5-ai{background:#F3F7F4;border-left:3px solid #2E7D32;border-radius:0 8px 8px 0;padding:.9rem 1.1rem;margin:1.1rem 0;font-size:.92rem;}
+.wt5-ai h4{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#2E7D32;margin-bottom:.45rem;}
+.wt5-ai code{display:block;background:#fff;border:1px solid #D6E4D8;border-radius:6px;padding:.65rem .8rem;margin:.5rem 0;font-size:.83rem;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;line-height:1.5;}
+.wt5-act{border:1px dashed var(--gd);border-radius:8px;padding:1rem 1.15rem;margin:1.2rem 0;background:#FFFDF6;}
+.wt5-act h4{font-size:.95rem;color:var(--nv);margin-bottom:.5rem;}
+.wt5-q{border:1px solid var(--ln);border-radius:8px;padding:.9rem 1.1rem;margin:.8rem 0;}
+.wt5-q>p{font-weight:600;margin-bottom:.6rem;}
+.wt5-opt{display:block;width:100%;text-align:left;border:1px solid var(--ln);background:var(--bg);border-radius:6px;padding:.5rem .7rem;margin-bottom:.4rem;cursor:pointer;font:inherit;font-size:.9rem;transition:.15s;}
+.wt5-opt:hover{border-color:var(--mg);}
+.wt5-opt.ok{border-color:#2E7D32;background:#EFF7EF;} .wt5-opt.no{border-color:var(--mg);background:var(--warm);}
+.wt5-fb{font-size:.87rem;margin-top:.5rem;padding:.6rem .75rem;border-radius:6px;background:var(--tint);display:none;}
+.wt5-fb.on{display:block;}
+.wt5-course textarea{width:100%;font:inherit;font-size:.9rem;padding:.6rem .7rem;border:1px solid var(--ln);border-radius:6px;resize:vertical;background:var(--bg);color:var(--ink);}
+.wt5-course textarea:focus{outline:2px solid var(--mg);outline-offset:1px;}
+.wt5-btn{border:1px solid var(--nv);background:var(--nv);color:#fff;border-radius:6px;padding:.5rem .95rem;cursor:pointer;font:inherit;font-size:.86rem;font-weight:600;}
+.wt5-btn.ghost{background:transparent;color:var(--nv);} .wt5-btn:disabled{opacity:.35;cursor:not-allowed;}
+.wt5-btn.sm{padding:.35rem .7rem;font-size:.78rem;}
+.wt5-nav{display:flex;justify-content:space-between;gap:.6rem;margin-top:1.8rem;padding-top:1.1rem;border-top:1px solid var(--ln);}
+.wt5-tools{display:flex;gap:.5rem;flex-wrap:wrap;margin:.6rem 0 1.2rem;}
+.wt5-saved{font-size:.75rem;color:var(--mut);align-self:center;}
+.wt5-pf label{display:block;font-weight:700;color:var(--nv);margin:1.1rem 0 .2rem;font-size:.95rem;}
+.wt5-pf .hint{font-size:.82rem;color:var(--mut);margin-bottom:.4rem;}
+.wt5-src{font-size:.78rem;color:var(--mut);border-top:1px solid var(--ln);margin-top:1.6rem;padding-top:.7rem;}
+@media print{.wt5-dots,.wt5-nav,.wt5-tools,.wt5-bar,.wt5-opt{display:none!important;}
+ .wt5-panel{display:block!important;page-break-after:always;} .wt5-fb{display:block!important;}
+ .wt5-course{max-width:none;font-size:11pt;} .wt5-course textarea{border:1px solid #999;min-height:70px;}}
+</style>
+<div class="wt5-course" id="wt5-root">
+<div class="wt5-hd"><div class="wt5-kick">FORGE · PROFESSIONAL DEVELOPMENT · CERTIFICATED</div><h1>The Prompt Builder</h1><div class="wt5-sub">MAP → AIM → CRUCIBLE → OCEAN — how to ask for a task worth setting</div><div class="wt5-meta">Four modules · 6 hours · self-paced · portfolio-assessed · with an interactive workspace</div></div>
+<div class="wt5-bar"><i></i></div>
+<div class="wt5-tools"><button class="wt5-btn ghost sm wt5-print" type="button">Print / PDF</button><button class="wt5-btn ghost sm wt5-export" type="button">Export portfolio</button><button class="wt5-btn ghost sm wt5-reset" type="button">Reset progress</button><span class="wt5-saved"></span></div>
+<div class="wt5-dots"><button class="wt5-dot" type="button" aria-current="false">Start</button><button class="wt5-dot" type="button" aria-current="false">Module 1</button><button class="wt5-dot" type="button" aria-current="false">Module 2</button><button class="wt5-dot" type="button" aria-current="false">Module 3</button><button class="wt5-dot" type="button" aria-current="false">Module 4</button><button class="wt5-dot" type="button" aria-current="false">Portfolio</button></div>
+<section class="wt5-panel"><h2>Before you start</h2><div class="wt5-out">PD 1 to 4 first if you can. This course assumes you can already say what thinking a task demands — because that is what you will be asking a model to build.</div><p>PD 2, 3 and 4 taught what to change about a task. This one is narrower and more practical: <b>how to ask for it.</b></p>
+<p>Most teachers' prompts fail the same way. They describe the topic and the format and say nothing about the thinking, so the model returns something fluent, correctly levelled and completable without understanding — exactly the task PD 1 taught you to reject.</p>
+<p>The architecture has four stages. Each fixes a different failure.</p><div class="wt5-tw"><table><thead><tr><th>Stage</th><th>Name</th><th>Framework</th><th>What it fixes</th></tr></thead><tbody><tr><td>1</td><td>The Fuel</td><td><b>MAP</b> — Memory, Assets, Actions</td><td>The model does not know your class, your unit or your constraints, so it invents an average one.</td></tr><tr><td>2</td><td>The Engine</td><td><b>AIM</b> — Actor, Input, Mission</td><td>Vague about who is answering, what they work from, and what done looks like.</td></tr><tr><td>3</td><td>The Crucible</td><td>Iterate and verify</td><td>The first draft gets accepted. It is rarely the best available and often wrong in ways you would not check.</td></tr><tr><td>4</td><td>The Polish</td><td><b>OCEAN</b> — Original, Concrete, Evident, Assertive, Narrative</td><td>Output that is correct and reads like every other generated resource.</td></tr></tbody></table></div><h3>The workspace</h3><p>This course has a tool attached. <b><a href="prompt-builder.html">the Prompt Builder</a></b> walks the four stages, assembles the prompt as you type, and has the four Transforming Tasks differentiation modes and twenty formative check-ins wired into it. Open it in a second tab and build as you read.</p><div class="wt5-note"><b>Everything saves in this browser.</b> Course and builder both use <code>localStorage</code> only — no account, no server, nothing uploaded. The builder's Copy button puts the finished prompt on your clipboard for ChatGPT, Claude or Gemini.</div><h3>What you will produce</h3>
+<ul><li>Three full prompts through all four stages, for tasks you are actually setting.</li>
+<li>A before-and-after: the same request written naively and written through the architecture, with both outputs.</li>
+<li>An account of what you rejected from the model and why.</li></ul><div class="wt5-note warn"><b>Attribution.</b> The differentiation modes and check-ins in the builder are the <b>Transforming Tasks</b> strategies and formative assessment practices published by the <b>South Australian Department for Education</b>. Exemplar links open the Department's own PDFs. Forge is not affiliated with or endorsed by the Department.</div></section>
+<section class="wt5-panel"><h2>Module 1 — The Fuel (MAP)</h2><div class="wt5-out">90 minutes · Outcome: you can ground a request so the model stops writing for an imaginary average class.</div><h3>1.1&nbsp; Generic output is an input problem</h3>
+<p>Ask for "a Year 8 worksheet on ratio" and you get one — for a class that does not exist, in a school that does not exist, with no constraints. The output is generic because the input was.</p>
+<p>MAP supplies three things the model cannot guess.</p>
+<h3>1.2&nbsp; Memory — the situation</h3>
+<p>Who the class is, where you are in the unit, how long the lesson is, what they did last week, what they got wrong.</p>
+<p class="wt5-lead">Weak</p><p><em>"Year 8 science."</em></p>
+<p class="wt5-lead">Strong</p><p><em>"Grade 8 science, mid-unit on ecosystems, 50-minute periods. Last week they could name the parts of a food chain but could not say what happens to the energy. Two students are new to English."</em></p>
+<h3>1.3&nbsp; Assets — what it works from</h3>
+<p>Your scheme of work, the standard, last week's task, the rubric you already use.</p>
+<p>This is the highest-leverage line in most prompts and the one most often missing. A model working from your materials produces something that fits your unit. A model working from nothing produces something that fits the average of the internet.</p>
+<h3>1.4&nbsp; Actions — what it does first</h3>
+<p>Search, read the attachment, compute, or nothing. "None needed" is a legitimate answer and it stops the model padding.</p><div class="wt5-note warn"><b>The test for a good MAP.</b> Could a supply teacher who had never met your class produce the right task from what you have written? If not, neither can the model.</div><div class="wt5-act"><h4>Activity — fuel one real request</h4><ol><li>Open <b><a href="prompt-builder.html">the Prompt Builder</a></b> and pick the preset closest to what you are setting this week, or start blank.</li>
+<li>Write Memory as if briefing a colleague covering your class tomorrow. Four sentences, not four words.</li>
+<li>List your Assets honestly, including the ones you have not attached yet. Go and attach them.</li>
+<li>Decide Actions. If the answer is none, write none.</li>
+<li>Watch the prompt card assemble. It should already be longer than what you would normally have sent.</li></ol></div><h3>Check your understanding</h3><div class="wt5-q" data-qid="wt5-m1-q0"><p>Which element of MAP is highest-leverage for most teacher prompts?</p><button class="wt5-opt" type="button" data-i="0" data-ok="0" data-fb="Important, and most teachers already supply some of it. Not the one most commonly missing.">Memory — the class context</button><button class="wt5-opt" type="button" data-i="1" data-ok="1" data-fb="Correct. A model working from your scheme of work, your standard and last week&#x27;s task produces something that fits your unit. From nothing, it produces the average of the internet.">Assets — the materials you attach</button><button class="wt5-opt" type="button" data-i="2" data-ok="0" data-fb="Useful for controlling padding and search, but it changes the process rather than the fit.">Actions — what it should do first</button><button class="wt5-opt" type="button" data-i="3" data-ok="0" data-fb="They matter, but not equally. Attaching your own materials changes the output more than any other single line.">All three equally</button><div class="wt5-fb"></div></div><div class="wt5-q"><p>Write the Memory line for a lesson you teach this week, as if briefing a colleague covering your class.</p><textarea rows="3" data-k="wt5-m1-q1" data-label="Write the Memory line for a lesson you teach this week, as if briefing" placeholder="Your answer…"></textarea><p style="margin:.5rem 0 0"><button class="wt5-btn ghost sm wt5-reveal" type="button" data-t="wt5-m1-q1-a">Show a strong answer</button></p><div class="wt5-fb" id="wt5-m1-q1-a">A strong answer contains the year group and subject, where you are in the unit, the lesson length, and — the part almost everyone omits — <em>what students got wrong last time</em>. That last detail turns a generic task into a targeted one, and it is the direct link back to PD 1: the misconception is what the task exists to overturn, so the model needs to know it.<br><br>A weak answer is a label: 'Year 9 history, Weimar.' That tells the model the topic, which it could have inferred from your Mission, and nothing about the class.</div></div></section>
+<section class="wt5-panel"><h2>Module 2 — The Engine (AIM)</h2><div class="wt5-out">90 minutes · Outcome: a command with a defined voice, defined inputs and a checkable finish line.</div><h3>2.1&nbsp; Actor</h3>
+<p>Who is answering — specific enough to change the output.</p>
+<p class="wt5-lead">Weak</p><p><em>"You are a teacher."</em></p>
+<p class="wt5-lead">Strong</p><p><em>"You are a veteran Grade 8 science teacher and instructional designer, known for hands-on lessons that surface misconceptions early."</em></p>
+<p>The second has a bias you can predict. That is the point: you are choosing what kind of wrong you would rather be.</p>
+<h3>2.2&nbsp; Input</h3>
+<p>What the model is working from for <em>this</em> request. Assets is what exists; Input is what you are pointing at now.</p>
+<h3>2.3&nbsp; Mission</h3>
+<p>The finish line, stated so completion is checkable. A Mission that cannot be failed cannot be judged.</p><div class="wt5-tw"><table><thead><tr><th>Weak Mission</th><th>Strong Mission</th></tr></thead><tbody><tr><td>Make a lesson on food webs.</td><td>Design a 50-minute lesson on food webs with a hook, one hands-on activity and a five-question exit ticket whose wrong options are real misconceptions.</td></tr><tr><td>Write a rubric.</td><td>Write a four-point rubric for persuasive essay — claim, evidence, organisation, conventions — in language a Year 6 student can self-assess with.</td></tr><tr><td>Differentiate this.</td><td>Produce three versions at the same learning goal: one with the first step given, one with a worked example containing an error, one with no scaffold and a harder ceiling.</td></tr></tbody></table></div><div class="wt5-note warn"><b>The completion test.</b> Read your Mission and ask whether you could tell in ten seconds if the output met it. If not, the model cannot either — and it will optimise for sounding finished.</div><div class="wt5-ai"><h4>Where this meets PD 1</h4><p>The Mission line is where the six tests get enforced. A Mission that only names a topic produces a task a student can complete without thinking, however good the rest of the prompt is.</p><code>Add this to any Mission and the output changes:
+
+  The task must not be completable by a student who still believes
+  [state the misconception]. A student who has not understood
+  [the concept] should get it visibly wrong.
+
+  Then tell me, in one line, what a wrong answer would look like.</code><p>That last line is the check. If the model cannot describe a wrong answer, the task does not discriminate and it is not worth setting.</p></div><div class="wt5-act"><h4>Activity — build the Engine</h4><ol><li>In <b><a href="prompt-builder.html">the Prompt Builder</a></b>, write your Actor with one clause about what they are known for.</li>
+<li>Write the Mission, then apply the completion test aloud.</li>
+<li>Add the misconception clause above.</li>
+<li>Copy the prompt and run it. Keep the output for Module 3.</li></ol></div><h3>Check your understanding</h3><div class="wt5-q" data-qid="wt5-m2-q0"><p>What makes an Actor line useful rather than decorative?</p><button class="wt5-opt" type="button" data-i="0" data-ok="0" data-fb="Not the mechanism, and there is no reliable effect.">It flatters the model into trying harder</button><button class="wt5-opt" type="button" data-i="1" data-ok="1" data-fb="Correct. &#x27;A teacher&#x27; has no bias. &#x27;A teacher known for surfacing misconceptions early&#x27; has one, and you picked it.">It is specific enough to bias the output in a direction you chose</button><button class="wt5-opt" type="button" data-i="2" data-ok="0" data-fb="The Mission does that. If the Actor carries the subject, the Mission is underwritten.">It tells the model the subject</button><button class="wt5-opt" type="button" data-i="3" data-ok="0" data-fb="Tone is OCEAN&#x27;s job in Module 4. The Actor is about judgement, not register.">It makes the tone more professional</button><div class="wt5-fb"></div></div><div class="wt5-q"><p>Take a request you would normally type in one line. Rewrite the Mission so completion is checkable.</p><textarea rows="3" data-k="wt5-m2-q1" data-label="Take a request you would normally type in one line. Rewrite the Missio" placeholder="Your answer…"></textarea><p style="margin:.5rem 0 0"><button class="wt5-btn ghost sm wt5-reveal" type="button" data-t="wt5-m2-q1-a">Show a strong answer</button></p><div class="wt5-fb" id="wt5-m2-q1-a">The move is converting an intention into a specification. 'Make a starter on fractions' becomes 'Write a five-minute starter with four items, where item three is answerable only by a student who understands that a fraction is one number rather than two — and tell me what a student holding that misconception would answer.'<br><br>Three things changed: a length, a count, and a discriminating item with a stated wrong answer. All three are checkable in seconds. The original was checkable only by feel, which is why it produced something that felt fine and taught nothing.</div></div></section>
+<section class="wt5-panel"><h2>Module 3 — The Crucible</h2><div class="wt5-out">90 minutes · Outcome: you stop accepting first drafts, and you check what you would not have checked.</div><h3>3.1&nbsp; The first answer is not the answer</h3>
+<p>A model produces a plausible draft fast, and the speed is what makes it persuasive. The Crucible has two moves: make it iterate, then make it verify.</p>
+<h3>3.2&nbsp; Iterate</h3><div class="wt5-tw"><table><thead><tr><th>Pattern</th><th>What you add</th><th>When</th></tr></thead><tbody><tr><td>Chain of thought</td><td><em>Think step by step and show your reasoning before the final answer.</em></td><td>Anything with a sequence, a calculation or a design decision you want to inspect.</td></tr><tr><td>Refinement</td><td><em>Propose two sharper versions of this task and ask which I prefer before starting.</em></td><td>When you are not yet sure what you want. Costs one exchange, usually saves three.</td></tr><tr><td>Verifier</td><td><em>Ask me three clarifying questions, one at a time, before attempting this.</em></td><td>The highest-value pattern for task design, and the one teachers use least.</td></tr></tbody></table></div><div class="wt5-note"><b>Try the Verifier pattern once and you will keep it.</b> The questions a model asks reveal what your brief left out — and the gaps it finds are usually the ones your students would have found in the lesson.</div><h3>3.3&nbsp; Verify</h3><p>Five filters. Use one or two, not five — check the thing most likely to be wrong.</p><div class="wt5-tw"><table><thead><tr><th>Filter</th><th>What it asks for</th><th>Catches</th></tr></thead><tbody><tr><td>Assumptions</td><td>List every assumption you are making and rank each by confidence.</td><td>Silent guesses about your class, curriculum or level.</td></tr><tr><td>Sources</td><td>Cite two independent sources for each major claim, with URLs.</td><td>Confident invention in factual content.</td></tr><tr><td>Counter-evidence</td><td>Find one credible source that disagrees, and explain why.</td><td>Consensus framing where the field is contested.</td></tr><tr><td>Auditing</td><td>Re-compute every figure and show your working.</td><td>Arithmetic and data errors — common, and easily missed.</td></tr><tr><td>Cross-model</td><td>Flag anything a second model might dispute.</td><td>Content that is stylistically confident and substantively shaky.</td></tr></tbody></table></div><div class="wt5-note warn"><b>The Sources filter, honestly.</b> It reduces invented citations; it does not eliminate them. Open the links. A fabricated URL is the most embarrassing thing that can reach a student and it takes twenty seconds to check.</div><div class="wt5-act"><h4>Activity — put Module 2's output through the Crucible</h4><ol><li>Take the output you kept from Module 2.</li>
+<li>Turn on the Verifier pattern in <b><a href="prompt-builder.html">the Prompt Builder</a></b> and re-run it. Answer its questions honestly.</li>
+<li>Compare the second output with the first. Note what changed.</li>
+<li>Apply the Assumptions filter. The low-confidence items are your lesson's risk register.</li>
+<li>If there is factual content, apply Sources and <b>open every link</b>.</li></ol></div><h3>Check your understanding</h3><div class="wt5-q" data-qid="wt5-m3-q0"><p>Why is the Verifier pattern especially useful for task design?</p><button class="wt5-opt" type="button" data-i="0" data-ok="0" data-fb="Effort is not a meaningful category here.">It makes the model work harder</button><button class="wt5-opt" type="button" data-i="1" data-ok="1" data-fb="Correct — and the gaps it finds are usually the ones your students would have found in the lesson, which makes it a rehearsal as well as a check.">Its questions expose what your brief left out</button><button class="wt5-opt" type="button" data-i="2" data-ok="0" data-fb="Length is not the aim and often not the result.">It produces longer answers</button><button class="wt5-opt" type="button" data-i="3" data-ok="0" data-fb="The opposite. Iterating improves fit; verifying checks truth. Different jobs.">It removes the need to verify</button><div class="wt5-fb"></div></div><div class="wt5-q"><p>Which verification filter matters most in your subject, and why?</p><textarea rows="3" data-k="wt5-m3-q1" data-label="Which verification filter matters most in your subject, and why?" placeholder="Your answer…"></textarea><p style="margin:.5rem 0 0"><button class="wt5-btn ghost sm wt5-reveal" type="button" data-t="wt5-m3-q1-a">Show a strong answer</button></p><div class="wt5-fb" id="wt5-m3-q1-a">A good answer names one filter and ties it to a real failure mode. In history or geography it is usually Sources, because generated content invents plausible references and a fabricated citation in a student resource is unrecoverable. In mathematics and the sciences it is Auditing, because arithmetic slips are frequent, look right, and propagate through a worked example. In anything with a contested literature it is Counter-evidence, because the default register is consensus even where none exists.<br><br>A weak answer says all of them. Five filters on every prompt is a way of checking nothing carefully.</div></div></section>
+<section class="wt5-panel"><h2>Module 4 — The Polish (OCEAN)</h2><div class="wt5-out">90 minutes · Outcome: output that does not read like every other generated resource — wired to a differentiation strategy and a check-in.</div><h3>4.1&nbsp; The five</h3><div class="wt5-tw"><table><thead><tr><th>Letter</th><th>Add</th><th>Effect</th></tr></thead><tbody><tr><td><b>O</b>riginal</td><td>Give me three angles a typical teacher resource would not think of.</td><td>Breaks the default framing, which is the most-used framing in the training data.</td></tr><tr><td><b>C</b>oncrete</td><td>Back every claim with one real, specific example.</td><td>Kills abstraction, which is where generated content hides.</td></tr><tr><td><b>E</b>vident</td><td>Show your logic in three bullets before the final answer.</td><td>Makes the reasoning inspectable, so you can reject the route rather than the output.</td></tr><tr><td><b>A</b>ssertive</td><td>Take a clear stance rather than listing every option equally.</td><td>Stops the balanced-list default that leaves you doing the deciding.</td></tr><tr><td><b>N</b>arrative</td><td>Write with a flow: hook, problem, insight, proof.</td><td>Good for anything a student reads. Not for a rubric.</td></tr></tbody></table></div><div class="wt5-note">Two or three, not five. OCEAN is seasoning; all of it at once reads as strenuously written.</div><h3>4.2&nbsp; Wiring in the differentiation strategy</h3>
+<p>This is where PD 2, 3 and 4 meet the prompt. The builder carries the four Transforming Tasks strategies and their techniques; selecting one writes the instruction for you.</p><div class="wt5-tw"><table><thead><tr><th>Strategy</th><th>Techniques in the builder</th></tr></thead><tbody><tr><td>Closed → open</td><td>Different perspectives · many entry points · many pathways · many solutions</td></tr><tr><td>Tell → ask</td><td>Socratic questioning · explore before explain · use dialogue · student voice</td></tr><tr><td>Procedure → problem solving</td><td>Students determine the problem · insufficient information · no steps given · irrelevant information</td></tr><tr><td>Information → understanding</td><td>The techniques that turn content into something students must do something with</td></tr></tbody></table></div><p>Each strategy also links to the Department's published exemplars by subject, so you can see a before-and-after in your own discipline before writing the instruction.</p>
+<h3>4.3&nbsp; Wiring in the check-in</h3>
+<p>Twenty formative assessment practices, grouped by when they happen — end of lesson, mid lesson, and during independent work. Selecting one adds it to the prompt, so the task arrives with its evidence method attached rather than bolted on afterwards.</p>
+<p>This is the habit worth building: <b>a task and the way you will read it are one design decision, not two.</b></p><div class="wt5-ai"><h4>The finished shape</h4><p>A prompt built through all four stages is long, and length is not the point — specification is. Roughly what comes out:</p><code>MAP       Grade 8 science, mid-unit on ecosystems, 50-minute periods.
+          They can name a food chain but cannot say where the energy
+          goes. Two students new to English. Attached: last week&#x27;s
+          lesson and the standard on energy flow. No search needed.
+
+AIM       You are a veteran Grade 8 science teacher known for
+          surfacing misconceptions early. Working from the attached
+          lesson and standard, design a 50-minute lesson with a hook,
+          one hands-on activity and a five-question exit ticket whose
+          wrong options are real misconceptions.
+
+DIFF      Use &#x27;procedure to problem solving&#x27;: give insufficient
+          information and let students identify what they need.
+
+CHECK-IN  Include a mini-whiteboard check at the midpoint.
+
+CRUCIBLE  Ask me three clarifying questions first, one at a time.
+          Then list your assumptions and rank them by confidence.
+
+OCEAN     Be concrete — one real example per suggestion. Show your
+          logic in three bullets before the final answer.</code><p>That is about ninety seconds of typing in the builder, and it replaces the twenty minutes you would spend fixing a generic first draft.</p></div><div class="wt5-act"><h4>Activity — build three, keep one</h4><ol><li>Build three complete prompts in <b><a href="prompt-builder.html">the Prompt Builder</a></b> for three tasks you are setting in the next fortnight.</li>
+<li>Run all three. Keep the outputs.</li>
+<li>Choose the one you would actually set, and say why the other two failed.</li>
+<li>Write down what you rejected from the winning output and edited by hand. That list is your skill developing.</li></ol></div><h3>Check your understanding</h3><div class="wt5-q" data-qid="wt5-m4-q0"><p>Why does the builder attach the check-in to the prompt rather than leaving it until afterwards?</p><button class="wt5-opt" type="button" data-i="0" data-ok="0" data-fb="Marginally, and that is not the argument.">It saves time</button><button class="wt5-opt" type="button" data-i="1" data-ok="1" data-fb="Correct. A task designed without its evidence method usually produces work you cannot sort. Deciding both at once is what makes an exit ticket discriminate rather than decorate.">A task and the way you will read it are one design decision</button><button class="wt5-opt" type="button" data-i="2" data-ok="0" data-fb="It may be, in a given school. That is a compliance reason, not a design one.">Formative assessment is a requirement</button><button class="wt5-opt" type="button" data-i="3" data-ok="0" data-fb="They can. The question is when you decide to ask.">Models cannot write check-ins</button><div class="wt5-fb"></div></div><div class="wt5-q"><p>Take one output you generated. What did you reject and edit by hand, and what does that tell you?</p><textarea rows="4" data-k="wt5-m4-q1" data-label="Take one output you generated. What did you reject and edit by hand, a" placeholder="Your answer…"></textarea><p style="margin:.5rem 0 0"><button class="wt5-btn ghost sm wt5-reveal" type="button" data-t="wt5-m4-q1-a">Show a strong answer</button></p><div class="wt5-fb" id="wt5-m4-q1-a">The rejection list is the clearest picture of your own expertise you will get. Common entries: a context that was plausible but not true of your school; a scaffold that removed the thinking rather than supporting it; an exit ticket whose wrong options were careless rather than diagnostic; a reading level right on average and wrong for two named children.<br><br>What it tells you is which part of the brief was underspecified — every rejection maps back to a MAP or Mission line you could have written. Over three or four prompts the list gets shorter, and that is the actual skill this course builds.</div></div></section>
+<section class="wt5-panel"><h2>Assessment portfolio</h2><div class="wt5-out">Three pieces. Portfolio-assessed, no examination, no observation.</div><p>Everything saves in this browser. Use <b>Export portfolio</b> at the top when finished.</p><div class="wt5-tw"><table><thead><tr><th>Judgement</th><th>Part A</th><th>Part B</th><th>Overall</th></tr></thead><tbody><tr><td>Not yet</td><td>Prompts are longer but not more specified — no misconception, no checkable Mission</td><td>Reports the output was better without saying what was rejected</td><td>Resubmit with feedback</td></tr><tr><td>Pass</td><td>All four stages used; Mission checkable; a differentiation strategy wired in</td><td>Names specific hand edits and why</td><td>Certificate issued</td></tr><tr><td>Distinction</td><td>The Crucible caught something you would not have checked</td><td>The rejection list maps back to a line in the brief that would have prevented it</td><td>Certificate with distinction</td></tr></tbody></table></div><div class="wt5-pf">
+<label>Part A — Three built prompts  (40%)</label>
+<div class="hint">Three prompts for tasks you are actually setting, each through all four stages, with a differentiation strategy and a check-in attached. Paste the finished prompts from the builder.</div>
+<textarea rows="12" data-k="wt5-pf-a" data-label="Part A — Three built prompts (40%)"></textarea>
+<label>Part B — Before and after  (40%)</label>
+<div class="hint">The same request as you would normally have typed it, and through the architecture. Both outputs in full. Then what the second has that the first does not.</div>
+<textarea rows="10" data-k="wt5-pf-b" data-label="Part B — Before and after (40%)"></textarea>
+<label>Part C — What you rejected  (20%)</label>
+<div class="hint">Under 300 words. What you edited by hand in the output you used, and which line of your own brief would have prevented each edit. If the Crucible caught something you would not have checked, say what.</div>
+<textarea rows="7" data-k="wt5-pf-c" data-label="Part C — What you rejected (20%)"></textarea>
+</div><div class="wt5-note warn"><b>One rule, not negotiable.</b> No student names, no identifiable student work and no photographed exit tickets go into any AI tool, including the prompts you build here. Aggregate counts and anonymised quotations only. Check your school's AI policy before the first prompt, not after.</div><div class="wt5-src"><b>Sources.</b> Prompting architecture: MAP → AIM → CRUCIBLE → OCEAN. Differentiation strategies and techniques, and the twenty formative assessment check-ins: <b>Transforming Tasks</b> and the associated formative assessment practices, South Australian Department for Education, within the Teaching for Effective Learning framework. Exemplar links open the Department's own published PDFs. Forge is not affiliated with or endorsed by the Department.</div></section>
+<div class="wt5-nav"><button class="wt5-btn ghost wt5-prev" type="button">← Back</button><button class="wt5-btn wt5-next" type="button">Next →</button></div>
+</div>
+<script>
+(function(){
+ var P="wt5", KEY="wt5-course-v1";
+ var root=document.getElementById(P+"-root"); if(!root) return;
+ var panels=root.querySelectorAll("."+P+"-panel");
+ var dots=root.querySelectorAll("."+P+"-dot");
+ var bar=root.querySelector("."+P+"-bar>i");
+ var prev=root.querySelector("."+P+"-prev"), next=root.querySelector("."+P+"-next");
+ var savedMsg=root.querySelector("."+P+"-saved");
+ var state={i:0,seen:{},ans:{},pf:{}};
+ try{var raw=localStorage.getItem(KEY); if(raw){state=Object.assign(state,JSON.parse(raw));}}catch(e){}
+ function save(){ try{localStorage.setItem(KEY,JSON.stringify(state));
+   if(savedMsg){savedMsg.textContent="Saved "+new Date().toLocaleTimeString();}}catch(e){} }
+ function show(i){
+  if(i<0||i>=panels.length) return;
+  state.i=i; state.seen[i]=true;
+  for(var k=0;k<panels.length;k++){ panels[k].classList.toggle("on",k===i); }
+  for(var d=0;d<dots.length;d++){
+    dots[d].setAttribute("aria-current", d===i?"true":"false");
+    dots[d].classList.toggle("done", !!state.seen[d]);
+  }
+  var n=0; for(var s in state.seen){ if(state.seen[s]) n++; }
+  if(bar) bar.style.width=Math.round(n/panels.length*100)+"%";
+  if(prev) prev.disabled=(i===0);
+  if(next) next.textContent = (i===panels.length-1)?"Finish":"Next \u2192";
+  save();
+  var top=root.getBoundingClientRect().top+window.pageYOffset-12;
+  if(window.pageYOffset>top) window.scrollTo({top:top,behavior:"smooth"});
+ }
+ for(var d=0;d<dots.length;d++){ (function(k){ dots[k].onclick=function(){show(k);}; })(d); }
+ if(prev) prev.onclick=function(){show(state.i-1);};
+ if(next) next.onclick=function(){ if(state.i<panels.length-1) show(state.i+1); };
+ root.querySelectorAll("."+P+"-q[data-qid]").forEach(function(q){
+   var qid=q.getAttribute("data-qid");
+   var fb=q.querySelector("."+P+"-fb");
+   q.querySelectorAll("."+P+"-opt").forEach(function(btn){
+     btn.onclick=function(){
+       var correct=btn.getAttribute("data-ok")==="1";
+       q.querySelectorAll("."+P+"-opt").forEach(function(b){b.classList.remove("ok","no");});
+       btn.classList.add(correct?"ok":"no");
+       if(fb){ fb.innerHTML=btn.getAttribute("data-fb"); fb.classList.add("on"); }
+       state.ans[qid]=btn.getAttribute("data-i"); save();
+     };
+     if(state.ans[qid]===btn.getAttribute("data-i")) btn.click();
+   });
+ });
+ root.querySelectorAll("."+P+"-reveal").forEach(function(b){
+   b.onclick=function(){ var t=document.getElementById(b.getAttribute("data-t"));
+     if(t){ t.classList.toggle("on"); b.textContent = t.classList.contains("on")?"Hide the strong answer":"Show a strong answer"; } };
+ });
+ root.querySelectorAll("textarea[data-k]").forEach(function(ta){
+   var k=ta.getAttribute("data-k");
+   if(state.pf[k]) ta.value=state.pf[k];
+   var t; ta.addEventListener("input",function(){ clearTimeout(t);
+     t=setTimeout(function(){ state.pf[k]=ta.value; save(); },400); });
+ });
+ var ex=root.querySelector("."+P+"-export");
+ if(ex) ex.onclick=function(){
+   var out="The Prompt Builder\nPortfolio \u2014 exported "+new Date().toLocaleString()+"\n\n";
+   root.querySelectorAll("textarea[data-k]").forEach(function(ta){
+     out += (ta.getAttribute("data-label")||ta.getAttribute("data-k")) + "\n" +
+            (ta.value.trim()||"[not yet written]") + "\n\n";
+   });
+   var a=document.createElement("a");
+   a.href=URL.createObjectURL(new Blob([out],{type:"text/plain;charset=utf-8"}));
+   a.download="pd5-prompt-builder-portfolio.txt"; a.click(); URL.revokeObjectURL(a.href);
+ };
+ var pr=root.querySelector("."+P+"-print"); if(pr) pr.onclick=function(){window.print();};
+ var rs=root.querySelector("."+P+"-reset");
+ if(rs) rs.onclick=function(){ if(confirm("Clear your saved progress and all written answers for this course?")){
+     try{localStorage.removeItem(KEY);}catch(e){} location.reload(); } };
+ show(state.i||0);
+})();
+</script>
+</div>
+</main>
+<footer class="site"><div class="inner">
+<p><b>Forge — Designing Worthwhile Tasks with AI.</b> Five professional development courses, portfolio-assessed, with a 30-day follow-up clinic.</p>
+<p class="fine">Built on the <b>Transforming Tasks</b> strategies and the Teaching for Effective Learning (TfEL) framework, developed and published by the South Australian Department for Education. Forge is not affiliated with, endorsed by, or acting for the Department. See <a href="index.html#attribution" style="color:#A9BAD4">attribution and source</a>.</p>
+<p class="fine">Everything you type stays in your own browser. No account, no server, nothing uploaded.</p>
+</div></footer>
+</body></html>
